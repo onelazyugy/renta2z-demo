@@ -18,6 +18,6 @@
   },
   "scripts": {
     "start": "node server",
-    "postinstall": "cd ui/ && npm run build"
+    "postinstall": "cd ui/ && npm install && npm run build"
   }
 }
