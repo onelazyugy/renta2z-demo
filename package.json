@@ -17,7 +17,7 @@
     "request": "^2.83.0"
   },
   "scripts": {
-    "start": "node server",
+    "start": "node server/index.js",
     "postinstall": "cd ui/ && npm install && npm run build-prod"
   }
 }
