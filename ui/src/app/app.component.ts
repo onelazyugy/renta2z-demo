@@ -24,7 +24,8 @@ export class AppComponent implements OnInit {
         }
       })
       .catch(error => {
-          console.error('ERRRO:', error);
+          console.error('ERROR:', error);
+          this.ping = 'Offline';
       });
   }
 
