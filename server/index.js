@@ -1,21 +1,21 @@
 'use strict'
 const express = require('express');
 // const request = require('request');
-// const bodyParser = require('body-parser');
+const bodyParser = require('body-parser');
 const path = require('path');
-// const cors = require('cors');
-// const router = require('./routes');
+const cors = require('cors');
+const router = require('./routes');
 const port = process.env.PORT || 5001;
 //set in heroku config vars
-// const profile = process.env.PROFILE || "localhost";
+const profile = process.env.PROFILE || "localhost";
 
 let app = express();
 //enable cors for localhost
-// if(profile !== 'dev') {
-//   app.use(cors());
-// }
-// app.use(bodyParser.json());
-// router(app);
+if(profile !== 'dev') {
+  app.use(cors());
+}
+app.use(bodyParser.json());
+router(app);
 
 app.use(express.static(path.resolve(__dirname, '../ui/dist/')));
 
